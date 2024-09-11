@@ -1,0 +1,122 @@
+PODS:
+  - Alamofire (5.9.1)
+  - FSPagerView (0.8.3)
+  - IQKeyboardManager (6.5.19)
+  - JTAppleCalendar (8.0.5)
+  - JXPhotoBrowser (3.1.5)
+  - JXSegmentedView (1.4.1)
+  - Kingfisher (7.12.0)
+  - MJRefresh (3.7.9)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - NVActivityIndicatorView (5.2.0):
+    - NVActivityIndicatorView/Base (= 5.2.0)
+  - NVActivityIndicatorView/Base (5.2.0)
+  - ObjectMapper (4.4.2)
+  - Protobuf (3.27.3)
+  - ReachabilitySwift (5.2.3)
+  - Result (5.0.0)
+  - SnapKit (5.7.1)
+  - SSZipArchive (2.4.3)
+  - SVGAPlayer (2.5.7):
+    - SVGAPlayer/Core (= 2.5.7)
+    - SVGAPlayer/ProtoFiles (= 2.5.7)
+  - SVGAPlayer/Core (2.5.7):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.5.7):
+    - Protobuf (~> 3.4)
+  - SwiftDate (7.0.0)
+  - SwiftGifOrigin (1.7.0)
+  - SwiftyJSON (5.0.2)
+  - TagListView (1.4.1)
+  - Toast-Swift (5.1.1)
+  - TZImagePickerController (3.8.7):
+    - TZImagePickerController/Basic (= 3.8.7)
+    - TZImagePickerController/Location (= 3.8.7)
+  - TZImagePickerController/Basic (3.8.7)
+  - TZImagePickerController/Location (3.8.7)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire
+  - FSPagerView
+  - IQKeyboardManager
+  - JTAppleCalendar
+  - JXPhotoBrowser
+  - JXSegmentedView
+  - Kingfisher
+  - MJRefresh
+  - Moya
+  - NVActivityIndicatorView
+  - ObjectMapper
+  - ReachabilitySwift
+  - Result
+  - SnapKit
+  - SVGAPlayer (~> 2.3)
+  - SwiftDate
+  - SwiftGifOrigin (~> 1.7.0)
+  - SwiftyJSON
+  - TagListView
+  - Toast-Swift
+  - TZImagePickerController
+  - YYText
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - FSPagerView
+    - IQKeyboardManager
+    - JTAppleCalendar
+    - JXPhotoBrowser
+    - JXSegmentedView
+    - Kingfisher
+    - MJRefresh
+    - Moya
+    - NVActivityIndicatorView
+    - ObjectMapper
+    - Protobuf
+    - ReachabilitySwift
+    - Result
+    - SnapKit
+    - SSZipArchive
+    - SVGAPlayer
+    - SwiftDate
+    - SwiftGifOrigin
+    - SwiftyJSON
+    - TagListView
+    - Toast-Swift
+    - TZImagePickerController
+    - YYText
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  JTAppleCalendar: 16c6501b22cb27520372c28b0a2e0b12c8d0cd73
+  JXPhotoBrowser: a6d745f5711bde79b02ba29165e2456ab5bde476
+  JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  Protobuf: c1cbc880ea7c4e9b157e113515c720a22ee7cf50
+  ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
+  Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+  SVGAPlayer: 318b85a78b61292d6ae9dfcd651f3f0d1cdadd86
+  SwiftDate: bbc26e26fc8c0c33fbee8c140c5e8a68293a148a
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
+  TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 45337d34a14968cd4d1df65479d55e2d7f630423
+
+COCOAPODS: 1.15.2
