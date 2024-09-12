@@ -1,9 +1,10 @@
 //
-//  NetworkManager.swift
-//  Goallive
+//  APIClient.swift
+//  SwiftToolsDemo
 //
-//  Created by ken Z on 2023/10/26.
+//  Created by ken Z on 2024/9/12.
 //
+
 import UIKit
 import Moya
 import Result
@@ -18,21 +19,24 @@ enum APIError:Error{
     case unknowError
     case networkError(code: Int, message: String)
     case customError(code:Int, message: String)
+    case phoneNetError
     
-    func showError(hudSuperView:UIView? = nil){
+    func showError(){
         switch self{
         case .mappingError:
-            HUDManager.share.showHud(view: hudSuperView, msg: "neterror.dataerror".localStr())
+            HUDManager.share.showHud(msg: "apierror.mappingError".localStr())
             break
         case .unknowError:
-            HUDManager.share.showHud(view: hudSuperView, msg: "neterror.unknown".localStr())
+            HUDManager.share.showHud(msg:  "apierror.unknownError".localStr())
             break
         case .networkError(_,_):
-            HUDManager.share.showHud(view: hudSuperView, msg:"neterror.neterror".localStr())
+            HUDManager.share.showHud(msg:  "apierror.netConnectError".localStr())
             break
         case .customError(_,let message):
-            HUDManager.share.showHud(view: hudSuperView, msg:message)
+            HUDManager.share.showHud(msg:  message)
             break
+        case .phoneNetError:
+            HUDManager.share.showHud(msg: "apierror.phoneNetError")
         }
     }
 }
@@ -64,10 +68,11 @@ extension APIClient{
     }
     
     @objc private func reachabilityChanged(notification: Notification) {
-        guard let reaachability = notification.object as? Reachability else { return }
-        NotificationCenter.post(customeNotificationType: .JXNetStateChange)
+        guard let _ = notification.object as? Reachability else { return }
+        NotificationCenter.post(customeNotificationType: .JXNetConnectStateChange)
         
     }
+
 }
 
 // 创建一个通用的API客户端
@@ -81,12 +86,13 @@ class APIClient {
 
     static let shared = APIClient()
     private let provider = MoyaProvider<APIService>()
-    
     ///hudSuperView:HUD展示的父view 存在就展示hud加载
-    func request(target: APIService,needReconnect:Bool = true,hudSuperView:UIView? = nil,completion: @escaping (Result<BaseModel, APIError>) -> Void) -> Cancellable{
-        HUDManager.share.showActivityLoading(view: hudSuperView)
+    func request(target: APIService,completion: @escaping (Result<BaseModel, APIError>) -> Void) -> Cancellable?{
+        if !self.isReachable{
+            completion(.failure(APIError.phoneNetError))
+            return nil
+        }
         return provider.request(target) { result in
-            HUDManager.share.hide(view: hudSuperView)
             switch result {
             case .success(let response):
                 do {
@@ -100,17 +106,14 @@ class APIClient {
                         case .failure:
                             let errormsg =  "\(object.msg ?? "请求失败")"
                             let error = APIError.customError(code:object.code ?? 0, message: errormsg)
-                            self.APIErrorLogger(target: target, error: error,hudSuperView: hudSuperView)
                             completion(.failure(error))
                             break
                         }
                     } else {
-                        self.APIErrorLogger(target: target, error: APIError.mappingError,hudSuperView: hudSuperView)
                         completion(.failure(APIError.mappingError))
                     }
                 } catch let error as MoyaError{
                     let apiError = self.confiAPIError(moyaError: error)
-                    self.APIErrorLogger(target: target, error: apiError,hudSuperView: hudSuperView)
                     switch apiError{
                     case .networkError(_,_):
                         completion(.failure(apiError))
@@ -119,16 +122,13 @@ class APIClient {
                         completion(.failure(apiError))
                         break
                     }
-                } catch let error{
-                    self.APIErrorLogger(target: target, error: APIError.mappingError,hudSuperView: hudSuperView)
+                } catch _{
                     completion(.failure(APIError.mappingError))
                 }
                 break
             case .failure(let error):
-                
                 let errormsg = error.localizedDescription
                 let apierror = APIError.networkError(code: error.errorCode, message: errormsg)
-                self.APIErrorLogger(target: target, error: apierror,hudSuperView: hudSuperView)
                 completion(.failure(apierror))
                 break
             }
@@ -137,50 +137,18 @@ class APIClient {
     
     private func confiAPIError(moyaError:MoyaError) -> APIError{
         switch moyaError {
-        case .imageMapping(let response):
-            return APIError.mappingError
-        case .jsonMapping(let response):
+        case .imageMapping(_),
+                .jsonMapping(_),
+                .stringMapping(_),
+                .objectMapping(_, _),
+                .encodableMapping(_),
+                .parameterEncoding(_),
+                .requestMapping(_):
             return APIError.mappingError
         case .statusCode(let response):
             return APIError.networkError(code: response.statusCode, message: response.description)
-        case .stringMapping(let response):
-            return APIError.mappingError
-        case .objectMapping(let error, let response):
-            return APIError.mappingError
-        case .encodableMapping(let error):
-            return APIError.mappingError
-        case .underlying(let nsError as NSError, let response):
-            // now can access NSError error.code or whatever
-            // e.g. NSURLErrorTimedOut or NSURLErrorNotConnectedToInternet
+        case .underlying(let nsError as NSError, _):
             return APIError.networkError(code: nsError.code, message: nsError.domain)
-        case .underlying(let error, let response):
-            return APIError.networkError(code: 404, message: "SS")
-        case .requestMapping(let url):
-            return APIError.mappingError
-        case .parameterEncoding(let error):
-            return APIError.mappingError
-        }
-    }
-    
-    ///hudSuperView:HUD展示的父view 存在就展示hud加载
-    private func APIErrorLogger(target:APIService, error:APIError,hudSuperView:UIView? = nil){
-        switch error{
-        case .mappingError:
-            print("----------NETWORKERROR----------\nAPI:\(target.path)\nParams:\(target.parameters ?? [:])\ntoken:\(kUserDefaultsValueForKey(key: kUserDefault_token) ?? "")\nMsg:mapping解析错误\n----------END-------------------")
-            HUDManager.share.showHud(view: hudSuperView, msg: "neterror.dataerror".localStr())
-            break
-        case .networkError(let code,let message):
-            print("----------NETWORKERROR----------\nAPI:\(target.path)\nParams:\(target.parameters ?? [:])\ntoken:\(kUserDefaultsValueForKey(key: kUserDefault_token) ?? "")\nMsg:\(message),code:\(code)\n----------END-------------------")
-            HUDManager.share.showHud(view: hudSuperView, msg:"neterror.neterror".localStr())
-            break
-        case .customError(_,let message):
-            print("----------NETWORKERROR----------\nAPI:\(target.path)\nParams:\(target.parameters ?? [:])\ntoken:\(kUserDefaultsValueForKey(key: kUserDefault_token) ?? "")\nMsg:\(message)\n----------END-------------------")
-            HUDManager.share.showHud(view: hudSuperView, msg:message)
-            break
-        case .unknowError:
-            print("----------NETWORKERROR----------\nAPI:\(target.path)\nParams:\(target.parameters ?? [:])\ntoken:\(kUserDefaultsValueForKey(key: kUserDefault_token) ?? "")\nMsg:\("未知错误")\n----------END-------------------")
-            HUDManager.share.showHud(view: hudSuperView, msg:"neterror.unknown".localStr())
-            break
         }
     }
     

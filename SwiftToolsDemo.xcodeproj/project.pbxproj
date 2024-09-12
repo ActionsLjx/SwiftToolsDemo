@@ -46,12 +46,12 @@
 		32368E8C2C882AEC00042C0E /* JXBaseTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E762C882AEC00042C0E /* JXBaseTabbarVC.swift */; };
 		32368E8D2C882AEC00042C0E /* JXBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E772C882AEC00042C0E /* JXBaseVC.swift */; };
 		32368E8E2C882AEC00042C0E /* JXBaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E782C882AEC00042C0E /* JXBaseWebVC.swift */; };
-		32368E932C882FCC00042C0E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E902C882FCC00042C0E /* APIClient.swift */; };
 		32368E942C882FCC00042C0E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E912C882FCC00042C0E /* APIService.swift */; };
 		32368E962C8850A000042C0E /* JXCusCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E952C8850A000042C0E /* JXCusCalendarView.swift */; };
 		32368E982C8850A800042C0E /* JXCusCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32368E972C8850A800042C0E /* JXCusCalendarView.xib */; };
 		32368E9B2C88570200042C0E /* JXACMonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E992C88570200042C0E /* JXACMonthDayCell.swift */; };
 		32368E9C2C88570200042C0E /* JXACMonthDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */; };
+		32777BC42C92BF8A001225B6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC32C92BF89001225B6 /* APIClient.swift */; };
 		8D1B446073630CABF4D83DDA /* Pods_SwiftToolsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DDA68FD3FA52F7A880B2DA /* Pods_SwiftToolsDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,12 +97,12 @@
 		32368E762C882AEC00042C0E /* JXBaseTabbarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseTabbarVC.swift; sourceTree = "<group>"; };
 		32368E772C882AEC00042C0E /* JXBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseVC.swift; sourceTree = "<group>"; };
 		32368E782C882AEC00042C0E /* JXBaseWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXBaseWebVC.swift; sourceTree = "<group>"; };
-		32368E902C882FCC00042C0E /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		32368E912C882FCC00042C0E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		32368E952C8850A000042C0E /* JXCusCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXCusCalendarView.swift; sourceTree = "<group>"; };
 		32368E972C8850A800042C0E /* JXCusCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JXCusCalendarView.xib; sourceTree = "<group>"; };
 		32368E992C88570200042C0E /* JXACMonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXACMonthDayCell.swift; sourceTree = "<group>"; };
 		32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JXACMonthDayCell.xib; sourceTree = "<group>"; };
+		32777BC32C92BF89001225B6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		419F6CC6063450D3BA70731C /* Pods-SwiftToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftToolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftToolsDemo/Pods-SwiftToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E4DDA68FD3FA52F7A880B2DA /* Pods_SwiftToolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftToolsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30B263F174A701A5D74DD0D /* Pods-SwiftToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftToolsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftToolsDemo/Pods-SwiftToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 		32368E922C882FCC00042C0E /* JXAPI */ = {
 			isa = PBXGroup;
 			children = (
-				32368E902C882FCC00042C0E /* APIClient.swift */,
 				32368E912C882FCC00042C0E /* APIService.swift */,
+				32777BC32C92BF89001225B6 /* APIClient.swift */,
 			);
 			name = JXAPI;
 			path = SwiftToolsDemo/JXAPI;
@@ -458,10 +458,10 @@
 				32368E482C880A9A00042C0E /* JXNotificationExtension.swift in Sources */,
 				3227B40B2C903B00004B651C /* JXAppManager.swift in Sources */,
 				32368E3F2C880A9A00042C0E /* ColorExtensions.swift in Sources */,
+				32777BC42C92BF8A001225B6 /* APIClient.swift in Sources */,
 				32368E8D2C882AEC00042C0E /* JXBaseVC.swift in Sources */,
 				32368E622C880A9A00042C0E /* LocalizableManager.swift in Sources */,
 				32368E602C880A9A00042C0E /* HUDManager.swift in Sources */,
-				32368E932C882FCC00042C0E /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

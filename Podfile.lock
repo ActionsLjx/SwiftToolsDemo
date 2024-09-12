@@ -7,13 +7,11 @@ PODS:
   - JXSegmentedView (1.4.1)
   - Kingfisher (7.12.0)
   - MJRefresh (3.7.9)
+  - MKProgress (1.2.0)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - NVActivityIndicatorView (5.2.0):
-    - NVActivityIndicatorView/Base (= 5.2.0)
-  - NVActivityIndicatorView/Base (5.2.0)
   - ObjectMapper (4.4.2)
   - Protobuf (3.27.3)
   - ReachabilitySwift (5.2.3)
@@ -49,8 +47,8 @@ DEPENDENCIES:
   - JXSegmentedView
   - Kingfisher
   - MJRefresh
+  - MKProgress (from `https://github.com/kamirana4/MKProgress.git`)
   - Moya
-  - NVActivityIndicatorView
   - ObjectMapper
   - ReachabilitySwift
   - Result
@@ -75,7 +73,6 @@ SPEC REPOS:
     - Kingfisher
     - MJRefresh
     - Moya
-    - NVActivityIndicatorView
     - ObjectMapper
     - Protobuf
     - ReachabilitySwift
@@ -91,6 +88,15 @@ SPEC REPOS:
     - TZImagePickerController
     - YYText
 
+EXTERNAL SOURCES:
+  MKProgress:
+    :git: https://github.com/kamirana4/MKProgress.git
+
+CHECKOUT OPTIONS:
+  MKProgress:
+    :commit: b510e786ec87a18e17bf56e56a1e8349b7fe1fa5
+    :git: https://github.com/kamirana4/MKProgress.git
+
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
@@ -100,8 +106,8 @@ SPEC CHECKSUMS:
   JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
   Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  MKProgress: 76c0ba758cca1415aa63aa94d0856467c2d632e3
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
   ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
   Protobuf: c1cbc880ea7c4e9b157e113515c720a22ee7cf50
   ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
@@ -117,6 +123,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 45337d34a14968cd4d1df65479d55e2d7f630423
+PODFILE CHECKSUM: b397aaca7334bc2bcbaa4a2a3677dcc9c1e09289
 
 COCOAPODS: 1.15.2

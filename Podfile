@@ -25,8 +25,8 @@ pod 'SnapKit' # 布局
 pod 'YYText' # 富文本
 pod 'SwiftDate'
 pod 'Kingfisher'
-pod 'NVActivityIndicatorView'# 加载动画
 pod 'Toast-Swift'# toast
+pod 'MKProgress', :git => 'https://github.com/kamirana4/MKProgress.git'
 pod 'TZImagePickerController'#照片选择器
 pod 'JXPhotoBrowser'#照片查看器
 pod 'JXSegmentedView'#滚动切换视图

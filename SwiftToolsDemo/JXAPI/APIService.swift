@@ -13,16 +13,17 @@ import SwiftyJSON
 
 // 创建一个枚举来定义你的API端点
 enum APIService {
-    
+    case test
 
 }
 
 extension APIService: TargetType {
     
     var path: String {
-//        switch self {
-//            
-//        }
+        switch self {
+        case .test:
+            return ""
+        }
         return ""
     
     }

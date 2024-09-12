@@ -22,7 +22,7 @@ extension UIButton {
     type ：image 的位置
     Space ：图片文字之间的间距
     */
-func setImagePosition(type:JXButtonImagePosition,Space space:CGFloat)  {
+    func setImagePosition(type:JXButtonImagePosition,Space space:CGFloat)  {
        
         let imageWith :CGFloat = (imageView?.frame.size.width)!
         let imageHeight :CGFloat = (imageView?.frame.size.height)!
@@ -58,5 +58,14 @@ func setImagePosition(type:JXButtonImagePosition,Space space:CGFloat)  {
         self.imageEdgeInsets = imageEdgeInsets
     }
   
+    //设置按钮背景色
+    func setBackgroundColor(color:UIColor,state:UIControl.State,size:CGSize? = nil){
+        var newSize = self.size
+        if let size = size{
+            newSize = size
+        }
+        self.setBackgroundImage(color.image(size: newSize), for: state)
+    }
+
 }
 
