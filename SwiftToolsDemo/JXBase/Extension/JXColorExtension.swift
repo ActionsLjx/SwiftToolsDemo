@@ -8,6 +8,22 @@
 import UIKit
 
 extension UIColor {
+    
+    //深色模式动态颜色
+    static func dynamicColor(light: UIColor, dark: UIColor) -> UIColor {
+         if #available(iOS 13.0, *) {
+             return UIColor { traitCollection in
+                 if traitCollection.userInterfaceStyle == .dark {
+                     return dark
+                 } else {
+                     return light
+                 }
+             }
+         } else {
+             return light  // 系统不支持深色模式时，返回亮色模式下的颜色
+         }
+     }
+    
     //可以直接传整数
     convenience init(r:Int,g:Int,b:Int,alpha:CGFloat) {
          self.init(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: alpha)

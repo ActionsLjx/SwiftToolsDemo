@@ -1,12 +1,12 @@
 //
-//  JXImageTools.swift
+//  JXImageUtils.swift
 //  Goallive
 //
 //  Created by ken Z on 2023/11/28.
 //
 import UIKit
 import Photos
-class JXImageTools: NSObject {
+class JXImageUtils: NSObject {
     //PHAsset转换url
     static func requetVideo(phAsset: PHAsset, completed: ((_ url: URL?) -> Void)?) {
         PHCachingImageManager.default().requestAVAsset(forVideo: phAsset, options: nil, resultHandler: { (video, audioMix, info) in

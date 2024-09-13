@@ -72,10 +72,10 @@ extension APIService{
             if let token = kUserDefaultsValueForKey(key: kUserDefault_token) as? String{
                 let relToken = "Bearer \(token)"
                 return ["Authorization":relToken,
-                        "Accept-Language":LocalizableManager.getCurrnetLanguage() == .chinese ? "zh_CN" : "en_US"
+                        "Accept-Language":LanguageManager.getCurrnetLanguage() == .chineseSimplified ? "zh_CN" : "en_US"
                 ]
             }
-            return ["Accept-Language":LocalizableManager.getCurrnetLanguage() == .chinese ? "zh_CN" : "en_US"
+            return ["Accept-Language":LanguageManager.getCurrnetLanguage() == .chineseSimplified ? "zh_CN" : "en_US"
             ]
             
         }

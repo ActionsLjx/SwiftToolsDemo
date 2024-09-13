@@ -69,7 +69,7 @@ extension String {
     
     //国际化
     func localStr() -> String{
-        return LocalizableManager.localValue(self)
+        return LanguageManager.localValue(self)
     }
     
     //富文本

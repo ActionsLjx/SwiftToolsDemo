@@ -9,18 +9,16 @@ import Toast_Swift
 import MKProgress
 
 
-class HUDManager: NSObject {
-    static let share = HUDManager()
-    
+class HUDUtils: NSObject {    
     //点击是否隐藏
-    var isTapToDismissEnabled:Bool = true {
+    static var isTapToDismissEnabled:Bool = true {
         didSet{
             ToastManager.shared.isTapToDismissEnabled = isTapToDismissEnabled
         }
     }
     
-    func showHud(msg:String,_ view:UIView? = kCurrentWindow,msgColor:UIColor? = nil,backgroundColor:UIColor? = nil,duration:TimeInterval = 1,position:ToastPosition = .center,complete:@escaping ((Bool)->()) = { _ in}){
-        self.hide(view: view)
+    static func showHud(msg:String,_ view:UIView? = kCurrentWindow,msgColor:UIColor? = nil,backgroundColor:UIColor? = nil,duration:TimeInterval = 1,position:ToastPosition = .center,complete:@escaping ((Bool)->()) = { _ in}){
+        HUDUtils.hide(view: view)
         guard let view = view else {return}
         var style = ToastStyle()
         if let msgColor = msgColor{
@@ -34,8 +32,8 @@ class HUDManager: NSObject {
     //正在加载toast
     //activityIndicator 菊花
     //radial 旋转
-    func showActivityLoading(view:UIView? = kCurrentWindow,hudType:HudType = .radial,logoImage:UIImage? = nil,tinkColor:UIColor = .darkGray,hudBgColor:UIColor = .white, maskBgColor:UIColor = UIColor(white: 0, alpha: 0.55)){
-        self.hide(view: view)
+    static func showActivityLoading(view:UIView? = kCurrentWindow,hudType:HudType = .radial,logoImage:UIImage? = nil,tinkColor:UIColor = .darkGray,hudBgColor:UIColor = .white, maskBgColor:UIColor = UIColor(white: 0, alpha: 0.55)){
+        HUDUtils.hide(view: view)
         guard let view = view else { return }
         MKProgress.config.hudType = .activityIndicator
         MKProgress.config.width = 110
@@ -63,7 +61,7 @@ class HUDManager: NSObject {
 
     }
     
-    func hide(view:UIView? = kCurrentWindow){
+    static func hide(view:UIView? = kCurrentWindow){
         view?.hideToast()
         view?.hideToastActivity()
         MKProgress.hide()

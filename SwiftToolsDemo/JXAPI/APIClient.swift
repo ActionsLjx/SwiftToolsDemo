@@ -24,19 +24,19 @@ enum APIError:Error{
     func showError(){
         switch self{
         case .mappingError:
-            HUDManager.share.showHud(msg: "apierror.mappingError".localStr())
+            HUDUtils.showHud(msg: "apierror.mappingError".localStr())
             break
         case .unknowError:
-            HUDManager.share.showHud(msg:  "apierror.unknownError".localStr())
+            HUDUtils.showHud(msg:  "apierror.unknownError".localStr())
             break
         case .networkError(_,_):
-            HUDManager.share.showHud(msg:  "apierror.netConnectError".localStr())
+            HUDUtils.showHud(msg:  "apierror.netConnectError".localStr())
             break
         case .customError(_,let message):
-            HUDManager.share.showHud(msg:  message)
+            HUDUtils.showHud(msg:  message)
             break
         case .phoneNetError:
-            HUDManager.share.showHud(msg: "apierror.phoneNetError")
+            HUDUtils.showHud(msg: "apierror.phoneNetError")
         }
     }
 }

@@ -9,6 +9,12 @@ import UIKit
 
 class JXAppManager: NSObject {
     static let share = JXAppManager.init()
+
+    //用户登录状态
+    var isUserLogin:Bool = false
+    
+    //深色模式
+   
     
     //蒙版
     private var isTouchHide:Bool = true
@@ -19,7 +25,6 @@ class JXAppManager: NSObject {
         return overlayView
     }()
 
-    
     //JXAppManager初始配置
     override init() {
         super.init()
@@ -27,6 +32,14 @@ class JXAppManager: NSObject {
     }
     
 }
+
+// MARK: ========== 深色模式 ==========
+// MARK: --------- 公开方法
+extension JXAppManager{
+   
+     
+}
+// MARK: ========== 深色模式 End ==========
 
 // MARK: ========== 蒙版模块 ==========
 // MARK: --------- 公开方法

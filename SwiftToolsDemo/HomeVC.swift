@@ -73,27 +73,39 @@ class HomeVC: UIViewController,JXSegmentedViewDelegate, JXSegmentedListContainer
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        let btn = UIButton.init(frame: CGRect.init(x: 100, y: 100, width: 30, height: 80))
-        btn.setTitle("", for: .normal)
-        btn.backgroundColor = UIColor.red
-        self.view.addSubview(btn)
-        btn.addTarget(self, action: #selector(click), for: .touchUpInside)
-//        self.view.addSubview(segmentedView)
-//        self.view.addSubview(listContainerView)
+        self.view.backgroundColor = UIColor.dynamicColor(light: .white, dark: .black)
+        let btn1 = UIButton.init(frame: CGRect.init(x: 100, y: 100, width: 70, height: 30))
+        btn1.backgroundColor = UIColor.dynamicColor(light: UIColor.red, dark: UIColor.yellow)
+        btn1.setTitle("浅色", for: .normal)
+        self.view.addSubview(btn1)
+        btn1.addTarget(self, action: #selector(clickLight), for: .touchUpInside)
+        
+        let btn2 = UIButton.init(frame: CGRect.init(x: 100, y: 210, width: 70, height: 30))
+        btn2.setTitle("深色", for: .normal)
+        btn2.backgroundColor = UIColor.dynamicColor(light: UIColor.red, dark: UIColor.yellow)
+
+        self.view.addSubview(btn2)
+        btn2.addTarget(self, action: #selector(clickDark), for: .touchUpInside)
+        
+        let btn3 = UIButton.init(frame: CGRect.init(x: 100, y: 320, width: 70, height: 30))
+        btn3.setTitle("自动", for: .normal)
+        btn3.backgroundColor = UIColor.dynamicColor(light: UIColor.red, dark: UIColor.yellow)
+        
+        self.view.addSubview(btn3)
+        btn3.addTarget(self, action: #selector(clickAuto), for: .touchUpInside)
 
 
     }
     
-    @objc private func click(){
-//        HUDManager.share.showHud(msg: "ce",position: .bottom)
-        HUDManager.share.showActivityLoading()
-//        JXCusCalendarView.show(currendDate: Date()) { selectDate in
-//            
-//        }
-//        let testview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 300))
-//        testview.backgroundColor = UIColor.red
-//        JXAppManager.share.showMask(subView: testview, subSize: CGSize(width: kScreenWidth, height: 300))
+    @objc private func clickLight(){
+    }
+
+    @objc private func clickDark(){
+        
+    }
+    
+    @objc private func clickAuto(){
+        
     }
     
     //MARK: JXSegmentedViewDelegate
