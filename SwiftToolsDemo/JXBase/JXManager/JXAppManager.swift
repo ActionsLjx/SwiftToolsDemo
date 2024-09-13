@@ -79,7 +79,7 @@ extension JXAppManager{
         APIClient.shared.startNetListen()
         configMaskView()
         configIQKeyboard()
-        JXDarkModeUtils.config()
+//        JXDarkModeUtils.config()
     }
     
     private func configIQKeyboard(){

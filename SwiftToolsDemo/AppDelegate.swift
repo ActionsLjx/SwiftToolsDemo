@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import IQKeyboardManager
-import YYText
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

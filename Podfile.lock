@@ -60,7 +60,7 @@ DEPENDENCIES:
   - TagListView
   - Toast-Swift
   - TZImagePickerController
-  - YYText
+  - YYText (from `https://github.com/ActionsLjx/YYText.git`, commit `7df0be2`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -86,16 +86,21 @@ SPEC REPOS:
     - TagListView
     - Toast-Swift
     - TZImagePickerController
-    - YYText
 
 EXTERNAL SOURCES:
   MKProgress:
     :git: https://github.com/kamirana4/MKProgress.git
+  YYText:
+    :commit: 7df0be2
+    :git: https://github.com/ActionsLjx/YYText.git
 
 CHECKOUT OPTIONS:
   MKProgress:
     :commit: b510e786ec87a18e17bf56e56a1e8349b7fe1fa5
     :git: https://github.com/kamirana4/MKProgress.git
+  YYText:
+    :commit: 7df0be2
+    :git: https://github.com/ActionsLjx/YYText.git
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
@@ -123,6 +128,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b397aaca7334bc2bcbaa4a2a3677dcc9c1e09289
+PODFILE CHECKSUM: b608a53cac01f5b339bf12016a536fd2d4fb1109
 
 COCOAPODS: 1.15.2

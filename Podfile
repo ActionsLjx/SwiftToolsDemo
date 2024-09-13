@@ -22,7 +22,7 @@ pod 'ObjectMapper'
 pod 'ReachabilitySwift'	#网络监听
 pod 'IQKeyboardManager'#键盘监听
 pod 'SnapKit' # 布局
-pod 'YYText' # 富文本
+pod 'YYText', :git => 'https://github.com/ActionsLjx/YYText.git', :commit => '7df0be2'  # 富文本
 pod 'SwiftDate'
 pod 'Kingfisher'
 pod 'Toast-Swift'# toast

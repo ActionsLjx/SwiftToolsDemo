@@ -7,7 +7,7 @@
 
 import UIKit
 import JXSegmentedView
-
+import YYText
 class HomeVC: UIViewController,JXSegmentedViewDelegate, JXSegmentedListContainerViewDataSource {
 
     lazy var sliderView: JXSegmentedIndicatorLineView = {
@@ -93,8 +93,6 @@ class HomeVC: UIViewController,JXSegmentedViewDelegate, JXSegmentedListContainer
         
         self.view.addSubview(btn3)
         btn3.addTarget(self, action: #selector(clickAuto), for: .touchUpInside)
-
-
     }
     
     @objc private func clickLight(){
