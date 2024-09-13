@@ -7,6 +7,16 @@
 import UIKit
 
 extension UIImage {
+    static func dynamicImage(light:UIImage?,dark:UIImage?) -> UIImage?{
+        if #available(iOS 13.0, *) {
+            guard let weakLight = light, let weakDark = dark, let config = weakLight.configuration else { return light }
+            let lightImage = weakLight.withConfiguration(config.withTraitCollection(UITraitCollection.init(userInterfaceStyle: UIUserInterfaceStyle.light)))
+            lightImage.imageAsset?.register(weakDark, with: config.withTraitCollection(UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)))
+            return lightImage.imageAsset?.image(with: UITraitCollection.current) ?? light
+        }
+        return light
+    }
+    
     // 修正图像方向的函数
     func fixImageOrientation() -> UIImage {
         if self.imageOrientation == .up {

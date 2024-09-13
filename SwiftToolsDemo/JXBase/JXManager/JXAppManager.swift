@@ -6,15 +6,13 @@
 //
 
 import UIKit
-
+import IQKeyboardManager
+import YYText
 class JXAppManager: NSObject {
     static let share = JXAppManager.init()
 
     //用户登录状态
     var isUserLogin:Bool = false
-    
-    //深色模式
-   
     
     //蒙版
     private var isTouchHide:Bool = true
@@ -24,22 +22,27 @@ class JXAppManager: NSObject {
         overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.5) // 设置灰色遮罩的透明度
         return overlayView
     }()
+}
 
-    //JXAppManager初始配置
-    override init() {
-        super.init()
+extension JXAppManager{
+    
+    //因为有深色模式配置 必须在winds初始化之后调用
+    func config(){
+        APIClient.shared.startNetListen()
         configMaskView()
+        configIQKeyboard()
+        JXDarkModeUtils.config()
     }
     
+    private func configIQKeyboard(){
+        let manager = IQKeyboardManager.shared()
+        manager.isEnableAutoToolbar = false
+        manager.isEnabled = true
+        manager.shouldResignOnTouchOutside = true
+        manager.toolbarDoneBarButtonItemText = "完成"
+        manager.registerTextFieldViewClass(YYTextView.self, didBeginEditingNotificationName: NSNotification.Name.YYTextViewTextDidBeginEditing.rawValue, didEndEditingNotificationName: NSNotification.Name.YYTextViewTextDidEndEditing.rawValue)
+    }
 }
-
-// MARK: ========== 深色模式 ==========
-// MARK: --------- 公开方法
-extension JXAppManager{
-   
-     
-}
-// MARK: ========== 深色模式 End ==========
 
 // MARK: ========== 蒙版模块 ==========
 // MARK: --------- 公开方法

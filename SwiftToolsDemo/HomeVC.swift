@@ -98,14 +98,15 @@ class HomeVC: UIViewController,JXSegmentedViewDelegate, JXSegmentedListContainer
     }
     
     @objc private func clickLight(){
+        JXDarkModeUtils.setDarkMode(type: .light)
     }
 
     @objc private func clickDark(){
-        
+        JXDarkModeUtils.setDarkMode(type: .dark)
     }
     
     @objc private func clickAuto(){
-        
+        JXDarkModeUtils.setDarkMode(type: .unspecified)
     }
     
     //MARK: JXSegmentedViewDelegate

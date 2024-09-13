@@ -52,7 +52,7 @@
 		32368E9B2C88570200042C0E /* JXACMonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E992C88570200042C0E /* JXACMonthDayCell.swift */; };
 		32368E9C2C88570200042C0E /* JXACMonthDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */; };
 		32777BC42C92BF8A001225B6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC32C92BF89001225B6 /* APIClient.swift */; };
-		32777BC82C93EFF6001225B6 /* JXDarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC72C93EFF6001225B6 /* JXDarkUtils.swift */; };
+		32777BC82C93EFF6001225B6 /* JXDarkModeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC72C93EFF6001225B6 /* JXDarkModeUtils.swift */; };
 		8D1B446073630CABF4D83DDA /* Pods_SwiftToolsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DDA68FD3FA52F7A880B2DA /* Pods_SwiftToolsDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +104,7 @@
 		32368E992C88570200042C0E /* JXACMonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXACMonthDayCell.swift; sourceTree = "<group>"; };
 		32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JXACMonthDayCell.xib; sourceTree = "<group>"; };
 		32777BC32C92BF89001225B6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		32777BC72C93EFF6001225B6 /* JXDarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDarkUtils.swift; sourceTree = "<group>"; };
+		32777BC72C93EFF6001225B6 /* JXDarkModeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDarkModeUtils.swift; sourceTree = "<group>"; };
 		419F6CC6063450D3BA70731C /* Pods-SwiftToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftToolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftToolsDemo/Pods-SwiftToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E4DDA68FD3FA52F7A880B2DA /* Pods_SwiftToolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftToolsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30B263F174A701A5D74DD0D /* Pods-SwiftToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftToolsDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftToolsDemo/Pods-SwiftToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				32368E362C880A9A00042C0E /* HUDUtils.swift */,
 				32368E372C880A9A00042C0E /* JXImageUtils.swift */,
 				32368E382C880A9A00042C0E /* LanguageManager.swift */,
-				32777BC72C93EFF6001225B6 /* JXDarkUtils.swift */,
+				32777BC72C93EFF6001225B6 /* JXDarkModeUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -459,7 +459,7 @@
 				32368E4A2C880A9A00042C0E /* JXTableViewExtension.swift in Sources */,
 				32368E882C882AEC00042C0E /* JXAlertVC.swift in Sources */,
 				32368E482C880A9A00042C0E /* JXNotificationExtension.swift in Sources */,
-				32777BC82C93EFF6001225B6 /* JXDarkUtils.swift in Sources */,
+				32777BC82C93EFF6001225B6 /* JXDarkModeUtils.swift in Sources */,
 				3227B40B2C903B00004B651C /* JXAppManager.swift in Sources */,
 				32368E3F2C880A9A00042C0E /* ColorExtensions.swift in Sources */,
 				32777BC42C92BF8A001225B6 /* APIClient.swift in Sources */,
