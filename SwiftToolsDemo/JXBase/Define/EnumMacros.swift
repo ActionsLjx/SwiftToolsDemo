@@ -23,3 +23,10 @@ enum OrderStateType:Int{
     
 }
 
+ extension JXAppManager{
+    func test1(){}
+    
+    private func testApp(){
+        
+    }
+}

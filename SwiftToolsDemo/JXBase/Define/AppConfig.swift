@@ -35,7 +35,7 @@ let kPageSize:Int = 20
 
 
 // MARK: UserDefaultKey
-let kUserDefault_isLogin = "kUserDefault_isLogin"
+let kUserDefault_isAppLogin = "kUserDefault_isAppLogin"
 let kUserDefault_uid = "kUserDefault_uid"
 let kUserDefault_token = "kUserDefault_token"
 let kUserDefault_refreshToken = "kUserDefault_refreshToken"

@@ -11,8 +11,12 @@ import YYText
 class JXAppManager: NSObject {
     static let share = JXAppManager.init()
 
-    //用户登录状态
-    var isUserLogin:Bool = false
+    //app登录状态
+    var isAppLogin:Bool {
+        get{
+            return kUserDefaultsValueBoolForKey(key: kUserDefault_isAppLogin)
+        }
+    }
     
     //蒙版
     private var isTouchHide:Bool = true
@@ -23,6 +27,50 @@ class JXAppManager: NSObject {
         return overlayView
     }()
 }
+
+// MARK: ========== App Login模块 ==========
+// MARK: --------- 公开方法
+extension JXAppManager{
+    
+    //更新信息
+    func updateAppLoginRefresh(uid:Any?,token:String?,refreshToken:String?){
+        if let uid = uid {
+            kUserDefaultsSetVauleForKey(value: uid, key: kUserDefault_uid)
+        }
+        if let token = token {
+            kUserDefaultsSetVauleForKey(value: token, key: kUserDefault_token)
+        }
+        if let refreshToken = refreshToken {
+            kUserDefaultsSetVauleForKey(value: refreshToken, key: kUserDefault_refreshToken)
+        }
+    }
+    
+    //点击登录调用 方法会发送登录通知
+    func loginAppState(){
+        kUserDefaultsSetVauleForKey(value: true, key: kUserDefault_isAppLogin)
+        NotificationCenter.post(customeNotificationType: .JXAppLoginStateChange)
+    }
+    
+    //token失效或者登出调用 方法发送登出通知
+    func logoutAppState(){
+        if(!self.isAppLogin){ //防止重复通知
+            return
+        }
+        kUserDefaultsSetVauleForKey(value: false, key: kUserDefault_isAppLogin)
+        kUserDefaultsRemoveForKey(key: kUserDefault_uid)
+        kUserDefaultsRemoveForKey(key: kUserDefault_token)
+        kUserDefaultsRemoveForKey(key: kUserDefault_refreshToken)
+        NotificationCenter.post(customeNotificationType: .JXAppLoginStateChange)
+    }
+}
+
+extension JXAppManager{
+    private func logoutApp(){
+        
+    }
+}
+// MARK: ========== App Login End ==========
+
 
 extension JXAppManager{
     
