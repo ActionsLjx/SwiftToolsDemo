@@ -47,8 +47,6 @@
 		32368E942C882FCC00042C0E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E912C882FCC00042C0E /* APIService.swift */; };
 		32368E962C8850A000042C0E /* JXCusCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E952C8850A000042C0E /* JXCusCalendarView.swift */; };
 		32368E982C8850A800042C0E /* JXCusCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32368E972C8850A800042C0E /* JXCusCalendarView.xib */; };
-		32368E9B2C88570200042C0E /* JXACMonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E992C88570200042C0E /* JXACMonthDayCell.swift */; };
-		32368E9C2C88570200042C0E /* JXACMonthDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */; };
 		32777BC42C92BF8A001225B6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC32C92BF89001225B6 /* APIClient.swift */; };
 		32777BC82C93EFF6001225B6 /* JXDarkModeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32777BC72C93EFF6001225B6 /* JXDarkModeUtils.swift */; };
 		8D1B446073630CABF4D83DDA /* Pods_SwiftToolsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DDA68FD3FA52F7A880B2DA /* Pods_SwiftToolsDemo.framework */; };
@@ -97,8 +95,6 @@
 		32368E912C882FCC00042C0E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		32368E952C8850A000042C0E /* JXCusCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXCusCalendarView.swift; sourceTree = "<group>"; };
 		32368E972C8850A800042C0E /* JXCusCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JXCusCalendarView.xib; sourceTree = "<group>"; };
-		32368E992C88570200042C0E /* JXACMonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXACMonthDayCell.swift; sourceTree = "<group>"; };
-		32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JXACMonthDayCell.xib; sourceTree = "<group>"; };
 		32777BC32C92BF89001225B6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		32777BC72C93EFF6001225B6 /* JXDarkModeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDarkModeUtils.swift; sourceTree = "<group>"; };
 		419F6CC6063450D3BA70731C /* Pods-SwiftToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftToolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftToolsDemo/Pods-SwiftToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +140,6 @@
 				320348132C86EFFB00E6FF24 /* Assets.xcassets */,
 				320348152C86EFFB00E6FF24 /* LaunchScreen.storyboard */,
 				320348182C86EFFB00E6FF24 /* Info.plist */,
-				3227B4052C902420004B651C /* JXCalendarCell.swift */,
-				3227B4062C902420004B651C /* JXCalendarCell.xib */,
 				32368E0B2C8809ED00042C0E /* HomeVC.swift */,
 			);
 			path = SwiftToolsDemo;
@@ -164,8 +158,8 @@
 			children = (
 				32368E952C8850A000042C0E /* JXCusCalendarView.swift */,
 				32368E972C8850A800042C0E /* JXCusCalendarView.xib */,
-				32368E992C88570200042C0E /* JXACMonthDayCell.swift */,
-				32368E9A2C88570200042C0E /* JXACMonthDayCell.xib */,
+				3227B4052C902420004B651C /* JXCalendarCell.swift */,
+				3227B4062C902420004B651C /* JXCalendarCell.xib */,
 			);
 			path = JXCustomCalendar;
 			sourceTree = "<group>";
@@ -367,7 +361,6 @@
 				32368E892C882AEC00042C0E /* JXAlertVC.xib in Resources */,
 				3227B4082C902420004B651C /* JXCalendarCell.xib in Resources */,
 				320348172C86EFFB00E6FF24 /* Base in Resources */,
-				32368E9C2C88570200042C0E /* JXACMonthDayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +439,6 @@
 				32368E0C2C8809ED00042C0E /* HomeVC.swift in Sources */,
 				32368E422C880A9A00042C0E /* JXButtonExtension.swift in Sources */,
 				3203480B2C86EFFA00E6FF24 /* AppDelegate.swift in Sources */,
-				32368E9B2C88570200042C0E /* JXACMonthDayCell.swift in Sources */,
 				32368E802C882AEC00042C0E /* JXMulitResponseTableView.swift in Sources */,
 				32368E612C880A9A00042C0E /* JXImageUtils.swift in Sources */,
 				32368E882C882AEC00042C0E /* JXAlertVC.swift in Sources */,

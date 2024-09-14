@@ -8,7 +8,6 @@ import UIKit
 import Toast_Swift
 import MKProgress
 
-
 class HUDUtils: NSObject {    
     //点击是否隐藏
     static var isTapToDismissEnabled:Bool = true {
