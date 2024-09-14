@@ -23,14 +23,12 @@
 		32368E402C880A9A00042C0E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E132C880A9A00042C0E /* UIViewExtensions.swift */; };
 		32368E412C880A9A00042C0E /* JXAlertaActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E152C880A9A00042C0E /* JXAlertaActionExtension.swift */; };
 		32368E422C880A9A00042C0E /* JXButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E162C880A9A00042C0E /* JXButtonExtension.swift */; };
-		32368E432C880A9A00042C0E /* JXCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E172C880A9A00042C0E /* JXCollectionViewExtension.swift */; };
 		32368E442C880A9A00042C0E /* JXColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E182C880A9A00042C0E /* JXColorExtension.swift */; };
 		32368E452C880A9A00042C0E /* JXDateExetnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E192C880A9A00042C0E /* JXDateExetnsion.swift */; };
 		32368E462C880A9A00042C0E /* JXDoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1A2C880A9A00042C0E /* JXDoubleExtension.swift */; };
 		32368E472C880A9A00042C0E /* JXImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1B2C880A9A00042C0E /* JXImageExtension.swift */; };
 		32368E482C880A9A00042C0E /* JXNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1C2C880A9A00042C0E /* JXNotificationExtension.swift */; };
 		32368E492C880A9A00042C0E /* JXStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1D2C880A9A00042C0E /* JXStringExtension.swift */; };
-		32368E4A2C880A9A00042C0E /* JXTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1E2C880A9A00042C0E /* JXTableViewExtension.swift */; };
 		32368E4B2C880A9A00042C0E /* JXUITabBar+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E1F2C880A9A00042C0E /* JXUITabBar+Extenstion.swift */; };
 		32368E4C2C880A9A00042C0E /* JXUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E202C880A9A00042C0E /* JXUIViewExtension.swift */; };
 		32368E4D2C880A9A00042C0E /* UIApplicationExetnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32368E212C880A9A00042C0E /* UIApplicationExetnsion.swift */; };
@@ -75,14 +73,12 @@
 		32368E132C880A9A00042C0E /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		32368E152C880A9A00042C0E /* JXAlertaActionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXAlertaActionExtension.swift; sourceTree = "<group>"; };
 		32368E162C880A9A00042C0E /* JXButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXButtonExtension.swift; sourceTree = "<group>"; };
-		32368E172C880A9A00042C0E /* JXCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXCollectionViewExtension.swift; sourceTree = "<group>"; };
 		32368E182C880A9A00042C0E /* JXColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXColorExtension.swift; sourceTree = "<group>"; };
 		32368E192C880A9A00042C0E /* JXDateExetnsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDateExetnsion.swift; sourceTree = "<group>"; };
 		32368E1A2C880A9A00042C0E /* JXDoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDoubleExtension.swift; sourceTree = "<group>"; };
 		32368E1B2C880A9A00042C0E /* JXImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXImageExtension.swift; sourceTree = "<group>"; };
 		32368E1C2C880A9A00042C0E /* JXNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXNotificationExtension.swift; sourceTree = "<group>"; };
 		32368E1D2C880A9A00042C0E /* JXStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXStringExtension.swift; sourceTree = "<group>"; };
-		32368E1E2C880A9A00042C0E /* JXTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableViewExtension.swift; sourceTree = "<group>"; };
 		32368E1F2C880A9A00042C0E /* JXUITabBar+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JXUITabBar+Extenstion.swift"; sourceTree = "<group>"; };
 		32368E202C880A9A00042C0E /* JXUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXUIViewExtension.swift; sourceTree = "<group>"; };
 		32368E212C880A9A00042C0E /* UIApplicationExetnsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExetnsion.swift; sourceTree = "<group>"; };
@@ -200,14 +196,12 @@
 				32368E142C880A9A00042C0E /* SwifterSwift */,
 				32368E152C880A9A00042C0E /* JXAlertaActionExtension.swift */,
 				32368E162C880A9A00042C0E /* JXButtonExtension.swift */,
-				32368E172C880A9A00042C0E /* JXCollectionViewExtension.swift */,
 				32368E182C880A9A00042C0E /* JXColorExtension.swift */,
 				32368E192C880A9A00042C0E /* JXDateExetnsion.swift */,
 				32368E1A2C880A9A00042C0E /* JXDoubleExtension.swift */,
 				32368E1B2C880A9A00042C0E /* JXImageExtension.swift */,
 				32368E1C2C880A9A00042C0E /* JXNotificationExtension.swift */,
 				32368E1D2C880A9A00042C0E /* JXStringExtension.swift */,
-				32368E1E2C880A9A00042C0E /* JXTableViewExtension.swift */,
 				32368E1F2C880A9A00042C0E /* JXUITabBar+Extenstion.swift */,
 				32368E202C880A9A00042C0E /* JXUIViewExtension.swift */,
 				32368E212C880A9A00042C0E /* UIApplicationExetnsion.swift */,
@@ -436,7 +430,6 @@
 				32368E4C2C880A9A00042C0E /* JXUIViewExtension.swift in Sources */,
 				32368E8A2C882AEC00042C0E /* JXBaseNavigationVC.swift in Sources */,
 				32368E512C880A9A00042C0E /* BaseModel.swift in Sources */,
-				32368E432C880A9A00042C0E /* JXCollectionViewExtension.swift in Sources */,
 				32368E8C2C882AEC00042C0E /* JXBaseTabbarVC.swift in Sources */,
 				32368E942C882FCC00042C0E /* APIService.swift in Sources */,
 				32368E402C880A9A00042C0E /* UIViewExtensions.swift in Sources */,
@@ -456,7 +449,6 @@
 				32368E9B2C88570200042C0E /* JXACMonthDayCell.swift in Sources */,
 				32368E802C882AEC00042C0E /* JXMulitResponseTableView.swift in Sources */,
 				32368E612C880A9A00042C0E /* JXImageUtils.swift in Sources */,
-				32368E4A2C880A9A00042C0E /* JXTableViewExtension.swift in Sources */,
 				32368E882C882AEC00042C0E /* JXAlertVC.swift in Sources */,
 				32368E482C880A9A00042C0E /* JXNotificationExtension.swift in Sources */,
 				32777BC82C93EFF6001225B6 /* JXDarkModeUtils.swift in Sources */,
