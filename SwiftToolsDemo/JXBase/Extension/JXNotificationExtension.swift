@@ -8,8 +8,9 @@
 import UIKit
 
 enum JXNotification:String {
-    case JXNetConnectStateChange    //网络变化
-    case JXAppLoginStateChange     //用户登录状态变化
+    case JXNetConnectStateChange         //网络变化
+    case JXAppLoginStateChange          //用户登录状态变化
+    case JXSmsCodeReloadSecChange       //验证码倒计时
     
     var stringValue:String {
         return "JX" + rawValue

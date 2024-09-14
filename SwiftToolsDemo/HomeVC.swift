@@ -93,12 +93,18 @@ class HomeVC: UIViewController,JXSegmentedViewDelegate, JXSegmentedListContainer
         
         self.view.addSubview(btn3)
         btn3.addTarget(self, action: #selector(clickAuto), for: .touchUpInside)
+        JXAppManager.share.smsAddObserver(observer: self, selector: #selector(smschange))
     }
     
     @objc private func clickLight(){
         JXDarkModeUtils.setDarkMode(type: .light)
+        let issuc = JXAppManager.share.smsStartCountDown()
     }
-
+    
+    @objc private func smschange(){
+        print("sec:\(JXAppManager.share.smsReSendSec)")
+    }
+    
     @objc private func clickDark(){
         JXDarkModeUtils.setDarkMode(type: .dark)
     }

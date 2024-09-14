@@ -18,6 +18,15 @@ class JXAppManager: NSObject {
         }
     }
     
+    //全局验证码倒计时模块
+    var smsReSendSec:Int = 0 //当剩余时间0可发送 不为0不能发送
+    var smsCanSend:Bool{
+        get{
+            return smsReSendSec <= 0
+        }
+    }
+    private let smsDefSec:Int = 30
+    private var smsTimer:Timer?
     //蒙版
     private var isTouchHide:Bool = true
     private var maskViewList:[UIView] = []
@@ -28,8 +37,30 @@ class JXAppManager: NSObject {
     }()
 }
 
+// MARK: ========== JXAppManager初始化 ==========
+//公共方法
+extension JXAppManager{
+    
+    //因为有深色模式配置 必须在winds初始化之后调用
+    func config(){
+        APIClient.shared.startNetListen()
+        configMaskView()
+        configIQKeyboard()
+//        JXDarkModeUtils.config()
+    }
+    
+    private func configIQKeyboard(){
+        let manager = IQKeyboardManager.shared()
+        manager.isEnableAutoToolbar = false
+        manager.isEnabled = true
+        manager.shouldResignOnTouchOutside = true
+        manager.toolbarDoneBarButtonItemText = "完成"
+        manager.registerTextFieldViewClass(YYTextView.self, didBeginEditingNotificationName: NSNotification.Name.YYTextViewTextDidBeginEditing.rawValue, didEndEditingNotificationName: NSNotification.Name.YYTextViewTextDidEndEditing.rawValue)
+    }
+}
+
 // MARK: ========== App Login模块 ==========
-// MARK: --------- 公开方法
+//公共方法
 extension JXAppManager{
     
     //更新信息
@@ -64,36 +95,46 @@ extension JXAppManager{
     }
 }
 
-extension JXAppManager{
-    private func logoutApp(){
-        
-    }
-}
-// MARK: ========== App Login End ==========
+// MARK: ====================
 
-
+// MARK: ========== 验证码模块 ==========
 extension JXAppManager{
-    
-    //因为有深色模式配置 必须在winds初始化之后调用
-    func config(){
-        APIClient.shared.startNetListen()
-        configMaskView()
-        configIQKeyboard()
-//        JXDarkModeUtils.config()
+    //返回是否倒计时成功
+    func smsStartCountDown() -> Bool{
+        if(smsReSendSec > 0){
+            return false
+        }
+        smsReSendSec = smsDefSec
+        self.smsTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(smsTimeGoesOn), userInfo: nil, repeats: true)
+        self.smsTimer?.fire()
+        return true
     }
     
-    private func configIQKeyboard(){
-        let manager = IQKeyboardManager.shared()
-        manager.isEnableAutoToolbar = false
-        manager.isEnabled = true
-        manager.shouldResignOnTouchOutside = true
-        manager.toolbarDoneBarButtonItemText = "完成"
-        manager.registerTextFieldViewClass(YYTextView.self, didBeginEditingNotificationName: NSNotification.Name.YYTextViewTextDidBeginEditing.rawValue, didEndEditingNotificationName: NSNotification.Name.YYTextViewTextDidEndEditing.rawValue)
+    //手动重置倒计时状态 不再发送通知
+    func smsTimeRemuse(){
+        self.smsTimer?.invalidate()
+        self.smsTimer = nil
+        self.smsReSendSec = 0
     }
+    
+    //添加验证码倒计时监听
+    func smsAddObserver(observer:Any,selector:Selector){
+        NotificationCenter.default.addObserver(observer, selector: selector, name: JXNotification.JXSmsCodeReloadSecChange.notificationName, object: nil)
+    }
+    
+    //验证码倒计时调用
+    @objc private func smsTimeGoesOn(){
+        self.smsReSendSec = self.smsReSendSec - 1
+        if(smsReSendSec <= 0){
+            smsTimeRemuse()
+        }
+        NotificationCenter.post(customeNotificationType: .JXSmsCodeReloadSecChange)
+    }
+    
 }
 
 // MARK: ========== 蒙版模块 ==========
-// MARK: --------- 公开方法
+//公共方法
 extension JXAppManager{
     func showMask(subView:UIView,subSize:CGSize,isTouchHide:Bool = true,maskBgColor:UIColor = UIColor.black.withAlphaComponent(0.5)){
         self.maskViewList.append(subView)
@@ -130,7 +171,7 @@ extension JXAppManager{
         }
     }
 }
-// MARK: --------- 私有方法
+//私有方法
 extension JXAppManager{
     //privacy
     private func configMaskView(){
@@ -153,7 +194,7 @@ extension JXAppManager{
     }
 }
 
-// MARK: --------- 蒙版UIGestureRecognizerDelegate
+// MARK: ========== 蒙版UIGestureRecognizerDelegate
 extension JXAppManager:UIGestureRecognizerDelegate{
     // 手势识别器代理方法
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -169,7 +210,7 @@ extension JXAppManager:UIGestureRecognizerDelegate{
         return true // 否则接收触摸
     }
 }
-// MARK: ========== 蒙版模块 End ==========
+
 
 
 
